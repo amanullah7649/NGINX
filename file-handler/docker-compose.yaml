@@ -1,0 +1,47 @@
+version: '3.8'
+
+services: # Ensure this is plural
+    app-3000: # Name of the service
+        build:
+            context: . # Path to your Dockerfile
+            dockerfile: dockerfile # This is optional if your file is named "Dockerfile"
+        ports:
+            - '3000:3000' # Maps port 3000 on the host to port 3000 in the container
+        volumes:
+            - .:/usr/src/app # Mounts the current directory into the container
+            - /usr/src/app/node_modules # Prevents overwriting the node_modules folder
+        environment:
+            - NODE_ENV=development # Example environment variable
+            - APP_NAME=file-handler-3000 # Example environment variable
+
+        command: ['npm', 'start'] # Optional, can override CMD in Dockerfile
+
+    app-3001: # Name of the service
+        build:
+            context: . # Path to your Dockerfile
+            dockerfile: dockerfile # This is optional if your file is named "Dockerfile"
+        ports:
+            - '3001:3000' # Maps port 3000 on the host to port 3000 in the container
+        volumes:
+            - .:/usr/src/app # Mounts the current directory into the container
+            - /usr/src/app/node_modules # Prevents overwriting the node_modules folder
+        environment:
+            - NODE_ENV=development # Example environment variable
+            - APP_NAME=file-handler-3001 # Example environment variable
+
+        command: ['npm', 'start'] # Optional, can override CMD in Dockerfile
+
+    app-3002: # Name of the service
+        build:
+            context: . # Path to your Dockerfile
+            dockerfile: dockerfile # This is optional if your file is named "Dockerfile"
+        ports:
+            - '3002:3000' # Maps port 3000 on the host to port 3000 in the container
+        volumes:
+            - .:/usr/src/app # Mounts the current directory into the container
+            - /usr/src/app/node_modules # Prevents overwriting the node_modules folder
+        environment:
+            - NODE_ENV=development # Example environment variable
+            - APP_NAME=file-handler-3002 # Example environment variable
+
+        command: ['npm', 'start'] # Optional, can override CMD in Dockerfile

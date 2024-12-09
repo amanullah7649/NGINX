@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Landing Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    /* Header Styles */
+    header {
+      background-color: #333;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+
+    /* Hero Section Styles */
+    .hero {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60vh;
+      background-color: #ff6f61;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      flex-direction: column;
+    }
+
+    .hero h2 {
+      font-size: 48px;
+      margin: 0;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
+    .hero .cta-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #fff;
+      color: #ff6f61;
+      font-size: 18px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .hero .cta-btn:hover {
+      background-color: #ff4500;
+      color: white;
+    }
+
+    /* Features Section Styles */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .features div {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .features h3 {
+      font-size: 24px;
+    }
+
+    .features p {
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    /* Footer Styles */
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    /* Responsive Design */
+    @media screen and (max-width: 768px) {
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h2 {
+        font-size: 36px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <h1>Welcome to <span id="appName"></span></h1>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Your journey begins here</h2>
+    <p>Explore the best features with us and make the most of your time</p>
+    <button class="cta-btn">Get Started</button>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div>
+      <h3>Fast & Secure</h3>
+      <p>Our platform ensures the highest level of security and fast transactions.</p>
+    </div>
+    <div>
+      <h3>Easy to Use</h3>
+      <p>Simple and user-friendly interface for everyone, no matter the experience level.</p>
+    </div>
+    <div>
+      <h3>24/7 Support</h3>
+      <p>Our support team is always here to help you with any issues you might face.</p>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2024 Your Company. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Injecting the app name into the page dynamically
+    const appName = '<%= appName %>'; // Assuming this is set on the server-side
+    document.getElementById('appName').textContent = appName;
+  </script>
+</body>
+
+</html>
